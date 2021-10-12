@@ -4,9 +4,11 @@ import Berry from '../images/img-berryblitz.jpg';
 import Donut from '../images/img-donut.jpg';
 import Myrtle from '../images/img-myrtle-ave.jpg';
 import Rum from '../images/img-spiced-rum.jpg';
-import Napoleon from '../images/Classic-French-Napoleon.jpg'
-import CheeseCake from '../images/cheesecake-8.jpg'
-import Puff from '../images/Luscious-Puff.jpg'
+import Napoleon from '../images/Classic-French-Napoleon.jpg';
+import CheeseCake from '../images/cheesecake-8.jpg';
+import Puff from '../images/Luscious-Puff.jpg';
+
+export const MenuEl = document.createElement('div');
 
 function itemsTemplate(item) {
   return `
@@ -60,18 +62,15 @@ const menu = menuItems => {
     }
   ];
 
-  const Menu = document.createElement('div');
-  Menu.classList.add('menuItem');
-  Menu.innerHTML = `
+  MenuEl.classList.add('menuItem');
+  MenuEl.innerHTML = `
   <h2 class="items-text" >Pleasures of the Day</h2>
   <h4 class="items-text" >What's Steeping at The Tea Cozy Today?</h4>
   <h4 class="items-text" >${menuItems.length} items ready for you: </h4>
   ${menuItems.map(itemsTemplate).join('')}
     `;
 
-  return Menu;
+  return MenuEl;
 };
 
 document.body.appendChild(menu());
-
-export default menu;

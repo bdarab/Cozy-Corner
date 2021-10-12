@@ -1,5 +1,5 @@
+export const Address = document.createElement('div');
 const location = () => {
-  const Address = document.createElement('div');
   Address.classList.add('container');
   Address.innerHTML = `    
     <div id="location">
@@ -40,5 +40,3 @@ const location = () => {
 };
 
 document.body.appendChild(location());
-
-export default location;

@@ -8700,8 +8700,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+const Footer = document.createElement('div');
+
 const footer = () => {
-  const Footer = document.createElement('div');
   Footer.innerHTML = `
   <footer>
     <h2>The Tea Cozy</h2>
@@ -8717,6 +8718,7 @@ document.body.appendChild(footer());
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (footer);
 
+
 /***/ }),
 
 /***/ "./src/js/header.js":
@@ -8727,39 +8729,37 @@ document.body.appendChild(footer());
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "Home": () => (/* binding */ Home),
+/* harmony export */   "Menu": () => (/* binding */ Menu),
+/* harmony export */   "Location": () => (/* binding */ Location)
 /* harmony export */ });
 /* harmony import */ var _images_img_tea_cozy_logo_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../images/img-tea-cozy-logo.png */ "./src/images/img-tea-cozy-logo.png");
 
 
-function header() {
-  const element = document.createElement('div');
+const Home = document.querySelector('#home');
+const Menu = document.querySelector('#menu');
+const Location = document.querySelector('#location');
 
-  element.innerHTML = `
+const Ele = document.createElement('div');
+function header() {
+  Ele.innerHTML = `
     <nav>
        <button type="button" class="btn btn-dark" id="home"><a href="">Home</a></button>
        <button type="button" class="btn btn-dark" id="menu"><a href="">Menu</a></button>
        <button type="button" class="btn btn-dark" id="location"><a href="">Location</a></button>
      </nav>
     `;
-  
-  // const Home = document.querySelector('#home').addEventListener('click', (e) => {
-    
-  //   e.preventDefault()
-  // })
 
   // Add the image to our existing div.
   const myIcon = new Image();
   myIcon.src = _images_img_tea_cozy_logo_png__WEBPACK_IMPORTED_MODULE_0__;
 
-  element.appendChild(myIcon);
+  Ele.appendChild(myIcon);
 
-  return element;
+  return Ele;
 }
 
 document.body.appendChild(header());
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (header);
 
 
 /***/ }),
@@ -8772,10 +8772,10 @@ document.body.appendChild(header());
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "Address": () => (/* binding */ Address)
 /* harmony export */ });
+const Address = document.createElement('div');
 const location = () => {
-  const Address = document.createElement('div');
   Address.classList.add('container');
   Address.innerHTML = `    
     <div id="location">
@@ -8817,8 +8817,6 @@ const location = () => {
 
 document.body.appendChild(location());
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (location);
-
 
 /***/ }),
 
@@ -8830,7 +8828,7 @@ document.body.appendChild(location());
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "MenuEl": () => (/* binding */ MenuEl)
 /* harmony export */ });
 /* harmony import */ var _images_img_bedford_bizarre_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../images/img-bedford-bizarre.jpg */ "./src/images/img-bedford-bizarre.jpg");
 /* harmony import */ var _images_img_berryblitz_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/img-berryblitz.jpg */ "./src/images/img-berryblitz.jpg");
@@ -8849,6 +8847,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+const MenuEl = document.createElement('div');
 
 function itemsTemplate(item) {
   return `
@@ -8902,21 +8902,18 @@ const menu = menuItems => {
     }
   ];
 
-  const Menu = document.createElement('div');
-  Menu.classList.add('menuItem');
-  Menu.innerHTML = `
+  MenuEl.classList.add('menuItem');
+  MenuEl.innerHTML = `
   <h2 class="items-text" >Pleasures of the Day</h2>
   <h4 class="items-text" >What's Steeping at The Tea Cozy Today?</h4>
   <h4 class="items-text" >${menuItems.length} items ready for you: </h4>
   ${menuItems.map(itemsTemplate).join('')}
     `;
 
-  return Menu;
+  return MenuEl;
 };
 
 document.body.appendChild(menu());
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menu);
 
 
 /***/ }),
@@ -8929,12 +8926,11 @@ document.body.appendChild(menu());
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "element": () => (/* binding */ element)
 /* harmony export */ });
+const element = document.createElement('div');
 const mission = () => {
-  const element = document.createElement('div');
   element.innerHTML = `
-
   <div class='asl'>
       <div class='mission' id='mission'>
           <div class='text-content'>
@@ -8950,8 +8946,6 @@ const mission = () => {
 };
 
 document.body.appendChild(mission());
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mission);
 
 
 /***/ }),
@@ -9217,11 +9211,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_js_header__WEBPACK_IMPORTED_MODULE_2__["default"])();
-(0,_js_mission__WEBPACK_IMPORTED_MODULE_3__["default"])();
-(0,_js_menu__WEBPACK_IMPORTED_MODULE_4__["default"])();
-(0,_js_location__WEBPACK_IMPORTED_MODULE_5__["default"])();
-(0,_js_footer__WEBPACK_IMPORTED_MODULE_6__["default"])();
+window.onload = function () {
+  if (_js_header__WEBPACK_IMPORTED_MODULE_2__.Home) {
+    _js_header__WEBPACK_IMPORTED_MODULE_2__.Home.addEventListener('click', function01);
+  }
+};
+
+window.onload = function () {
+  if (_js_header__WEBPACK_IMPORTED_MODULE_2__.Menu) {
+    _js_header__WEBPACK_IMPORTED_MODULE_2__.Menu.addEventListener('click', function02);
+  }
+};
+
+window.onload = function () {
+  if (_js_header__WEBPACK_IMPORTED_MODULE_2__.Location) {
+    _js_header__WEBPACK_IMPORTED_MODULE_2__.Location.addEventListener('click', function03);
+  }
+};
+
+function function01(e) {
+  _js_mission__WEBPACK_IMPORTED_MODULE_3__.element.classList.remove('hide');
+  _js_menu__WEBPACK_IMPORTED_MODULE_4__.MenuEl.classList.add('hide');
+  _js_location__WEBPACK_IMPORTED_MODULE_5__.Address.classList.add('hide');
+  e.preventDefault();
+}
+
+function function02(e) {
+  _js_mission__WEBPACK_IMPORTED_MODULE_3__.element.classList.add('hide');
+  _js_menu__WEBPACK_IMPORTED_MODULE_4__.MenuEl.classList.remove('hide');
+  _js_location__WEBPACK_IMPORTED_MODULE_5__.Address.classList.add('hide');
+  e.preventDefault();
+}
+
+function function03(e) {
+  _js_mission__WEBPACK_IMPORTED_MODULE_3__.element.classList.add('hide');
+  _js_menu__WEBPACK_IMPORTED_MODULE_4__.MenuEl.classList.add('hide');
+  _js_location__WEBPACK_IMPORTED_MODULE_5__.Address.classList.remove('hide');
+  e.preventDefault();
+}
 
 })();
 

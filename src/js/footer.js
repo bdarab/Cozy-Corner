@@ -1,5 +1,6 @@
+const Footer = document.createElement('div');
+
 const footer = () => {
-  const Footer = document.createElement('div');
   Footer.innerHTML = `
   <footer>
     <h2>The Tea Cozy</h2>

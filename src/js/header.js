@@ -1,30 +1,26 @@
 import Icon from '../images/img-tea-cozy-logo.png';
 
-function header() {
-  const element = document.createElement('div');
+export const Home = document.querySelector('#home');
+export const Menu = document.querySelector('#menu');
+export const Location = document.querySelector('#location');
 
-  element.innerHTML = `
+const Ele = document.createElement('div');
+function header() {
+  Ele.innerHTML = `
     <nav>
        <button type="button" class="btn btn-dark" id="home"><a href="">Home</a></button>
        <button type="button" class="btn btn-dark" id="menu"><a href="">Menu</a></button>
        <button type="button" class="btn btn-dark" id="location"><a href="">Location</a></button>
      </nav>
     `;
-  
-  // const Home = document.querySelector('#home').addEventListener('click', (e) => {
-    
-  //   e.preventDefault()
-  // })
 
   // Add the image to our existing div.
   const myIcon = new Image();
   myIcon.src = Icon;
 
-  element.appendChild(myIcon);
+  Ele.appendChild(myIcon);
 
-  return element;
+  return Ele;
 }
 
 document.body.appendChild(header());
-
-export default header;

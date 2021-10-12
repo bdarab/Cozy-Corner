@@ -1,7 +1,6 @@
+export const element = document.createElement('div');
 const mission = () => {
-  const element = document.createElement('div');
   element.innerHTML = `
-
   <div class='asl'>
       <div class='mission' id='mission'>
           <div class='text-content'>
@@ -17,5 +16,3 @@ const mission = () => {
 };
 
 document.body.appendChild(mission());
-
-export default mission;
